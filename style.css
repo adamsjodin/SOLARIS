@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@100;300;400;500;600&family=Roboto&family=Roboto+Condensed:wght@300&family=Ropa+Sans&family=Secular+One&display=swap');
+:root {
+    --font-heading: 'Secular One';
+    --font-heading-second: 'Lora';
+    --font-paragraph: 'Roboto Condensed';
+
+    --color-secondary: #FFD029;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(270deg, rgba(2,0,36,1) 7%, rgba(12,12,116,1) 79%);
+}
+
+form {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: white;
+    font-family: var(--font-heading-second);
+}
+
+.hide {
+    display: none;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(255, 240, 240);
+    margin-top: 5rem;
+    font-family: var(--font-heading-second);
+    letter-spacing: 0.1em;
+
+}
+.header-paragraph {
+    font-family: var(--font-heading-second);
+    color: var(--color-secondary);
+    letter-spacing: 0.6em;
+
+}
+
+.header-solar-search {
+    padding: 0.5rem 4rem;
+    margin: 0.4rem;
+}
+
+#solar-system-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10rem;
+    cursor: pointer;
+}
+
+
+.solar-system--planets,
+.solar-system--sun, 
+.solar-system--mercury, 
+.solar-system--venus, 
+.solar-system--earth, 
+.solar-system--mars, 
+.solar-system--jupiter, 
+.solar-system--saturn, 
+.solar-system--uranus, 
+.solar-system--neptune {
+    height: 2rem;
+    width: 2rem;
+    background-color: yellow;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+.solar-system--mercury {
+    background-color: #888888;
+}
+.solar-system--venus {
+    background-color: #E7CDCD;
+}
+.solar-system--earth {
+    background-color: #428ED4;
+}
+.solar-system--mars {
+    background-color: #EF5F5F;
+}
+.solar-system--jupiter {
+    background-color: #E29468;
+}
+.solar-system--saturn {
+    background-color: #C7AA72;
+}
+.solar-system--uranus {
+    background-color: #C9D4F1;
+}
+.solar-system--neptune {
+    background-color: #7A91A7;
+}
+
+.modal {
+    width: 50rem;
+    height: 40rem;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 5px solid rgb(255, 255, 255);
+    padding: 0rem 1rem;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+}
+
+.modal-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    margin: 2rem;
+}
+.modal-heading-h3 {
+    font-size: 1.5rem;
+    color: #FFD029;
+    letter-spacing: 0.6em;
+    margin: 1rem;
+}
+
+h4 {
+    font-family: var(--font-heading-second);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.modal-paragraph {
+    font-size: 1rem;
+    font-family: var(--font-paragraph);
+    font-size: 300;
+    text-align: center;
+    margin: 0.3rem 2rem;
+}
+
+.modal-short-info {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+
+
+.overlay {
+    background-color: black;
+    width: 60rem;
+    height: 40rem;
+    position: absolute;
+    top: 20%;
+    left: 23%;
+    display: none;
+    color: white;
+    border: 5px solid white;
+}
+
+.overlay-moons {
+    width: 20rem;
+}
+
+.close-btn {
+    position: absolute;
+    top: 4%;
+    left: 3%;
+}
+
+.modal-btns {
+
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
