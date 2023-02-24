@@ -12,20 +12,28 @@
     margin: 0;
 }
 
-body {
-    background: linear-gradient(270deg, rgba(2,0,36,1) 7%, rgba(12,12,116,1) 79%);
-}
-
 form {
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+h1 {
+    font-size: 4rem;
+}
 
 h2 {
     color: white;
     font-family: var(--font-heading-second);
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
 }
 
 .hide {
@@ -40,88 +48,155 @@ h2 {
     margin-top: 5rem;
     font-family: var(--font-heading-second);
     letter-spacing: 0.1em;
-
 }
+
 .header-paragraph {
     font-family: var(--font-heading-second);
     color: var(--color-secondary);
     letter-spacing: 0.6em;
-
+    text-align: center;
+    font-size: 3rem;
+    
 }
 
 .header-solar-search {
     padding: 0.5rem 4rem;
     margin: 0.4rem;
+    font-family: var(--font-heading-second);
+    font-size: 1.5rem;
+    margin-top: 1rem;
 }
 
 #solar-system-container{
     display: flex;
     justify-content: space-around;
-    margin-top: 10rem;
+    align-items: center;
+    margin-top: 1rem;
     cursor: pointer;
 }
 
 
-.solar-system--planets,
-.solar-system--sun, 
-.solar-system--mercury, 
-.solar-system--venus, 
-.solar-system--earth, 
-.solar-system--mars, 
-.solar-system--jupiter, 
-.solar-system--saturn, 
-.solar-system--uranus, 
-.solar-system--neptune {
-    height: 2rem;
-    width: 2rem;
+
+.solar-system--sun:hover,
+.solar-system--mercury:hover,
+.solar-system--venus:hover,
+.solar-system--earth:hover,
+.solar-system--mars:hover,
+.solar-system--jupiter:hover,
+.solar-system--saturn:hover,
+.solar-system--uranus:hover,
+.solar-system--neptune:hover {
+    transform: scale(1.3) rotate(180deg);
+    transition: 0.9s ease-in-out;
+}
+
+.solar-system--sun {
     background-color: yellow;
+    background-image: url(images/sun.jpg);
+    background-position: center;
+    color: transparent;
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%;
     cursor: pointer;
     border: none;
 }
+
 .solar-system--mercury {
     background-color: #888888;
+    background-image: url(images/mercury.jpg);
+    background-position: center;
+    color: transparent;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
 .solar-system--venus {
     background-color: #E7CDCD;
+    background-image: url(images/venus2.jpg);
+    background-position: center;
+    color: transparent;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
 .solar-system--earth {
     background-color: #428ED4;
+    background-image: url(images/earth.jpg);
+    background-position: center;
+    color: transparent;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
 .solar-system--mars {
     background-color: #EF5F5F;
+    background-image: url(images/mars.jpg);
+    background-position: center;
+    color: transparent;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
 .solar-system--jupiter {
     background-color: #E29468;
+    background-image: url(images/jupiter.jpg);
+    background-position: center;
+    color: transparent;
+    height: 9rem;
+    width: 9rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
 .solar-system--saturn {
     background-color: #C7AA72;
+    background-image: url(images/saturn.jpg);
+    background-position: center;
+    color: transparent;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
 .solar-system--uranus {
     background-color: #C9D4F1;
+    background-image: url(images/uranus.jpg);
+    background-position: center;
+    color: transparent;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
 .solar-system--neptune {
     background-color: #7A91A7;
-}
-
-.modal {
-    width: 50rem;
-    height: 40rem;
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border: 5px solid rgb(255, 255, 255);
-    padding: 0rem 1rem;
-    position: absolute;
-    top: 25%;
-    left: 25%;
+    background-image: url(images/neptune.jpg);
+    background-position: center;
+    color: transparent;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }
 
 .modal-heading {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 2rem;
-    margin: 2rem;
+    font-size: 3rem;
+    margin: 1rem;
 }
 .modal-heading-h3 {
     font-size: 1.5rem;
@@ -150,15 +225,13 @@ h4 {
     text-align: center;
 }
 
-
-
 .overlay {
     background-color: black;
     width: 60rem;
     height: 40rem;
     position: absolute;
-    top: 20%;
-    left: 23%;
+    top: 23%;
+    left: 21%;
     display: none;
     color: white;
     border: 5px solid white;
@@ -170,14 +243,24 @@ h4 {
 
 .close-btn {
     position: absolute;
+    font-size: 1.5rem;
     top: 4%;
     left: 3%;
+    background-color: white;
+    border: none;
 }
 
-.modal-btns {
-
+.overlay-btns {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
+
+.overlay-btn-style {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    font-size: 1rem;
+    font-family: var(--font-heading-second);
+}
+

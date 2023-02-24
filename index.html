@@ -10,18 +10,21 @@
 <body>
     <section class="overlay"></section>
 
-    <header class="header">
-        <h1>SOLSYSTEMET</h1>
-        <h2 class="header-paragraph">SOLARIS</h2>
-        <form>
-        <label for="header-search">SÖK PLANET:</label>
-        <input type="text" class="header-solar-search" id="header-search">
-        </form>    
-    </header>
-    <main>
-        <article id="solar-system-container"></article>
-    </main>
-
+        <video autoplay muted loop id="myVideo">
+            <source src="/video/video.mp4" type="video/mp4">
+        </video>
+        <header class="header">
+            <h1>SOLSYSTEMET</h1>
+            <p class="header-paragraph">SOLARIS</p>
+            <form>
+                <label for="search-planet">SÖK PLANET:</label>
+                <input type="text" class="header-solar-search" id="search-planet">
+            </form>
+            <span class="error-message"></span>
+        </header>
+        <main>
+            <article id="solar-system-container"></article>
+        </main>
     <script src="script.js"></script>
 </body>
 </html>
