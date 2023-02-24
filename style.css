@@ -56,7 +56,6 @@ h2 {
     letter-spacing: 0.6em;
     text-align: center;
     font-size: 3rem;
-    
 }
 
 .header-solar-search {
@@ -74,8 +73,6 @@ h2 {
     margin-top: 1rem;
     cursor: pointer;
 }
-
-
 
 .solar-system--sun:hover,
 .solar-system--mercury:hover,
@@ -191,14 +188,14 @@ h2 {
     border: none;
 }
 
-.modal-heading {
+.overlay-heading {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 3rem;
     margin: 1rem;
 }
-.modal-heading-h3 {
+.overlay-heading-h3 {
     font-size: 1.5rem;
     color: #FFD029;
     letter-spacing: 0.6em;
@@ -211,7 +208,7 @@ h4 {
     font-size: 1.5rem;
 }
 
-.modal-paragraph {
+.overlay-paragraph {
     font-size: 1rem;
     font-family: var(--font-paragraph);
     font-size: 300;
@@ -219,7 +216,7 @@ h4 {
     margin: 0.3rem 2rem;
 }
 
-.modal-short-info {
+.overlay-short-info {
     display: flex;
     justify-content: space-around;
     text-align: center;
@@ -241,13 +238,14 @@ h4 {
     width: 20rem;
 }
 
-.close-btn {
+.overlay-close-btn {
     position: absolute;
     font-size: 1.5rem;
     top: 4%;
     left: 3%;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 .overlay-btns {
@@ -262,5 +260,11 @@ h4 {
     background-color: white;
     font-size: 1rem;
     font-family: var(--font-heading-second);
+    border: none;
+    cursor: pointer;
+}
+
+.overlay-btn-style:hover {
+    transform: scale(1.1);
 }
 

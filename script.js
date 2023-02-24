@@ -2,6 +2,7 @@
 let planets = [];
 let solarSystemContainer = document.getElementById('solar-system-container');
 let errorMessage = document.querySelector('.error-message')
+let searchPlanet = document.getElementById('search-planet');
 
 
 // HÄMTAR API:et
@@ -16,44 +17,18 @@ async function getSolaris() {
 }
 getSolaris()
 
-//SÖKFUNTION
-let searchPlanet = document.getElementById('search-planet');
-searchPlanet.addEventListener('keyup', function () {
-    let input = searchPlanet.value;
-    let foundPlanets = [];
-    planets.forEach(planet =>  {
-        if (planet.name.toLowerCase().includes(input.toLowerCase())) {
-            foundPlanets.push(planet)
-            console.log(foundPlanets)
-        }
+//Sökfunktionen. Misslyckades med att lägga in ett felmeddelande när inte en planet finns. 
+searchPlanet.addEventListener('input', e => {
+    let value = e.target.value.toLowerCase()
+    let planetElements = document.querySelectorAll(".solaris h2")
+    planetElements.forEach(planet => {
+        var isVisible = planet.innerText.toLowerCase().includes(value);
+        planet.classList.toggle("hide", !isVisible);
     })
-    if (foundPlanets.length > 0) {
-        renderSolarisToUI(foundPlanets)
-    } else {
-        errorMessage.innerHTML = 'Den planet du sökte på finns inte.'
-    }
 })
 
-// searchPlanet.addEventListener('input', e => {
-//     const value = e.target.value.toLowerCase()
-//     let planetElements = document.querySelectorAll(".solaris h2")
-//     planetElements.forEach(planet => {
-        
-//         if (isVisible) {
-//             var isVisible = planet.innerText.toLowerCase().includes(value);
-//             planet.classList.toggle("hide", !isVisible);
-//             console.log('found');
-//         } else {
-//             console.log('not found');
-//             errorMessage.innerHTML = 'Den planet du sökte på finns inte.'
-//         }
-//     })
-
-// })
-
 //HÄMTAR planeterna till startsidan
-function renderSolarisToUI() {
-    searchPlanet.innerHTML = "";
+function renderSolarisToUI(planets) {
     planets.forEach(planet => {
         var solarSystem = document.createElement('section');
         solarSystem.classList.add('solaris');
@@ -91,9 +66,9 @@ function renderSolarisToUI() {
                 neptune.classList.add('solar-system--neptune');
             } 
 
+            //Öppnar overlayen
             solarSystem.addEventListener('click', () => {
                 openOverlay(planet);
-                localStorage.setItem('solar-system', JSON.stringify(planets));
             });
 
     });
@@ -103,7 +78,7 @@ function renderSolarisToUI() {
 function openOverlay(planet) {
     let overlayEl = document.querySelector('.overlay');
     let closebtn = document.createElement('button');
-    closebtn.classList.add('close-btn');
+    closebtn.classList.add('overlay-close-btn');
     closebtn.innerHTML = 'X';
     closebtn.addEventListener('click', () => {
         overlayEl.style.display = 'none';
@@ -112,14 +87,14 @@ function openOverlay(planet) {
     overlayEl.style.display = 'block';
 
     overlayEl.innerHTML = `
-    <section class="modal-heading">
+    <section class="overlay-heading">
         <h2>${planet.name}</h2>
-        <p class="modal-heading-h3">${planet.latinName}</p>
+        <p class="overlay-heading-h3">${planet.latinName}</p>
     </section>
     
-    <p class="modal-paragraph">${planet.desc}</p>
+    <p class="overlay-paragraph">${planet.desc}</p>
     <br>
-    <article class="modal-short-info">
+    <article class="overlay-short-info">
         <aside>
             <section>
                 <h4>OMKRETS</h4>
@@ -170,8 +145,6 @@ function openOverlay(planet) {
         backBtn.addEventListener('click', () => {
             openOverlay(planets[planetIndex - 1]);
         })
-
-
 }
 
 
